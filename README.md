@@ -17,6 +17,7 @@
     ```bash
     sudo apt install mariadb-server
     ```
+    
 安装过程中会提示你设置 root 密码。设置完成后，MariaDB 服务器会继续安装和配置。
 
 ### 启动 MariaDB 服务：
@@ -26,6 +27,7 @@
     ```bash
     sudo systemctl status mariadb
     ```
+    
 如果 MariaDB 服务器未运行，你可以使用以下命令手动启动它：
 
     ```bash
