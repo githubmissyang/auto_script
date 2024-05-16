@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 提示用户逐步输入数据库信息
-read -p "Enter MySQL root password: " MYSQL_ROOT_PASSWORD
+read -p "Enter MariaDB root password: " MYSQL_ROOT_PASSWORD
 read -p "Enter WordPress database user: " WP_DB_USER
 read -p "Enter WordPress database password: " WP_DB_PASSWORD
 
@@ -19,15 +19,15 @@ BLOG_PORT="${BLOG_PORT:-80}"
 # 更新系统
 apt update && apt upgrade -y
 
-# 安装Apache、MySQL和PHP
-apt install apache2 mysql-server php php-mysql libapache2-mod-php php-cli php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip unzip -y
+# 安装Apache、MariaDB和PHP
+apt install apache2 mariadb-server php php-mysql libapache2-mod-php php-cli php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip unzip -y
 
-# 启动Apache和MySQL服务
+# 启动Apache和MariaDB服务
 systemctl start apache2
-systemctl start mysql
+systemctl start mariadb
 
-# 设置MySQL root密码
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$MYSQL_ROOT_PASSWORD';FLUSH PRIVILEGES;"
+# 设置MariaDB root密码
+mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';FLUSH PRIVILEGES;"
 
 # 创建WordPress数据库和用户
 mysql -e "CREATE DATABASE $WP_DB_NAME;"
