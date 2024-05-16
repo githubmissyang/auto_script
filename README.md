@@ -1,10 +1,44 @@
-这段脚本实现了在 Debian 系统上部署 WordPress 并使用 MySQL 作为数据库的功能。下面是对这个脚本的 GitHub 说明：
+# 安装MariaDB
+确保你的机器上有MariaDB，如果没有，按以下命令安装
+以下是在 Debian 10 上安装 MariaDB 的步骤：
+
+## 更新软件包索引：
+
+ 在终端中运行以下命令来确保你的软件包索引是最新的：
+
+    ```bash
+    sudo apt update
+    ```
+
+## 安装 MariaDB 服务器软件包：
+
+在终端中运行以下命令来安装 MariaDB 服务器软件包：
+
+    ```bash
+    sudo apt install mariadb-server
+    ```
+安装过程中会提示你设置 root 密码。设置完成后，MariaDB 服务器会继续安装和配置。
+
+### 启动 MariaDB 服务：
+
+安装完成后，MariaDB 服务器应该已经启动。你可以使用以下命令来检查 MariaDB 服务器的状态：
+
+    ```bash
+    sudo systemctl status mariadb
+    ```
+如果 MariaDB 服务器未运行，你可以使用以下命令手动启动它：
+
+    ```bash
+    sudo systemctl start mariadb
+    ```
+    
+现在，MariaDB 应该已经在你的 Debian 10 系统上安装完成并且可以正常使用了。
 
 ---
 
 # 一键部署WordPress脚本
 
-这个脚本允许你在 Debian 系统上轻松部署 WordPress，并使用 MySQL 作为数据库。脚本提供了一种简单而快速的方法来设置你的 WordPress 博客，并允许你自定义博客端口。
+这个脚本允许你在 Debian 系统上轻松部署 WordPress，并使用 MariaDB 作为数据库。脚本提供了一种简单而快速的方法来设置你的 WordPress 博客，并允许你自定义博客端口。
 
 ## 使用方法
 
@@ -26,7 +60,7 @@
     ./wordpress_debian_10.sh
     ```
 
-    按照提示逐步输入所需的信息：MySQL root 密码、WordPress 数据库用户、WordPress 数据库密码。如果你希望使用默认的数据库名和本地IP地址，只需按 Enter 键即可。
+    按照提示逐步输入所需的信息：MariaDB root 密码、WordPress 数据库用户、WordPress 数据库密码。如果你希望使用默认的数据库名和本地IP地址，只需按 Enter 键即可。
 
 4. **按照提示完成安装**
 
