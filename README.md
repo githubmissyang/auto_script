@@ -11,19 +11,19 @@
 1. **下载脚本**
 
     ```bash
-    wget https://raw.githubusercontent.com/your-username/your-repo-name/main/deploy_wordpress.sh
+    wget https://raw.githubusercontent.com/githubmissyang/auto_wordpress_script/main/wordpress_debian_10.sh
     ```
 
 2. **赋予执行权限**
 
     ```bash
-    chmod +x deploy_wordpress.sh
+    chmod +x wordpress_debian_10.sh
     ```
 
 3. **执行脚本**
 
     ```bash
-    ./deploy_wordpress.sh
+    ./wordpress_debian_10.sh
     ```
 
     按照提示逐步输入所需的信息：MySQL root 密码、WordPress 数据库用户、WordPress 数据库密码。如果你希望使用默认的数据库名和本地IP地址，只需按 Enter 键即可。
